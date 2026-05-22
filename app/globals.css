@@ -1,0 +1,489 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8faff;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-2: #f3f6ff;
+  --muted: #6b7280;
+  --muted-2: rgba(17, 24, 39, 0.62);
+  --border: rgba(15, 23, 42, 0.1);
+
+  --accent: #4f46e5;
+  --accent-2: #6d28d9;
+  --accent-foreground: #ffffff;
+  --link: color-mix(in oklab, var(--accent) 72%, var(--accent-2));
+  --ring: color-mix(in oklab, var(--accent) 52%, transparent);
+
+  --surface-glow: color-mix(in oklab, var(--accent) 12%, transparent);
+  --surface-glow-2: color-mix(in oklab, var(--accent-2) 10%, transparent);
+
+  --inline-code-bg: color-mix(in oklab, var(--accent) 10%, var(--card));
+  --inline-code-border: color-mix(in oklab, var(--accent) 22%, transparent);
+  --inline-code-fg: color-mix(in oklab, var(--foreground) 86%, var(--accent));
+  --prose-body: color-mix(in oklab, var(--foreground) 78%, var(--muted));
+  --prose-heading: color-mix(in oklab, var(--foreground) 96%, var(--accent));
+  --prose-strong: color-mix(in oklab, var(--foreground) 90%, var(--link));
+  --prose-link: var(--link);
+  --prose-link-underline: color-mix(in oklab, var(--link) 52%, transparent);
+  --prose-quote-bg: color-mix(in oklab, var(--surface-glow) 78%, var(--card));
+  --prose-quote-border: color-mix(in oklab, var(--link) 78%, transparent);
+  --prose-table-bg: color-mix(in oklab, var(--card) 82%, var(--background));
+  --prose-table-head-bg: color-mix(in oklab, var(--surface-glow-2) 72%, var(--card));
+  --prose-table-border: color-mix(in oklab, var(--border) 88%, transparent);
+  --prose-hr: color-mix(in oklab, var(--border) 82%, transparent);
+
+  --code-bg: #1e1e1e;
+  --code-header-bg: #252526;
+  --code-border: rgba(255, 255, 255, 0.1);
+  --code-fg: #d4d4d4;
+  --code-muted: #6a9955;
+  --code-keyword: #569cd6;
+  --code-string: #ce9178;
+  --code-number: #b5cea8;
+  --code-function: #dcdcaa;
+  --code-variable: #9cdcfe;
+  --code-property: #9cdcfe;
+  --code-type: #4ec9b0;
+  --code-operator: #d4d4d4;
+  --code-dot-red: #ff5f57;
+  --code-dot-yellow: #febc2e;
+  --code-dot-green: #28c840;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-link: var(--link);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+.dark {
+  --background: #050816;
+  --foreground: #eaf1ff;
+  --card: #0b1220;
+  --card-2: #0f1b31;
+  --muted: rgba(234, 241, 255, 0.68);
+  --muted-2: rgba(234, 241, 255, 0.56);
+  --border: rgba(234, 241, 255, 0.12);
+
+  --accent: #6366f1;
+  --accent-2: #8b5cf6;
+  --accent-foreground: #ffffff;
+  --link: color-mix(in oklab, var(--accent) 70%, var(--accent-2));
+  --ring: color-mix(in oklab, var(--accent) 55%, transparent);
+
+  --surface-glow: color-mix(in oklab, var(--accent) 14%, transparent);
+  --surface-glow-2: color-mix(in oklab, var(--accent-2) 12%, transparent);
+
+  --inline-code-bg: color-mix(in oklab, var(--accent) 12%, transparent);
+  --inline-code-border: color-mix(in oklab, var(--accent) 26%, transparent);
+  --inline-code-fg: color-mix(in oklab, var(--foreground) 88%, var(--accent));
+  --prose-body: color-mix(in oklab, var(--foreground) 82%, var(--muted));
+  --prose-heading: color-mix(in oklab, var(--foreground) 98%, var(--accent));
+  --prose-strong: color-mix(in oklab, var(--foreground) 92%, var(--accent));
+  --prose-link: color-mix(in oklab, var(--accent) 62%, white);
+  --prose-link-underline: color-mix(in oklab, var(--accent) 42%, transparent);
+  --prose-quote-bg: color-mix(in oklab, var(--surface-glow) 40%, var(--card));
+  --prose-quote-border: color-mix(in oklab, var(--accent) 64%, transparent);
+  --prose-table-bg: color-mix(in oklab, var(--card) 92%, var(--background));
+  --prose-table-head-bg: color-mix(in oklab, var(--surface-glow-2) 36%, var(--card));
+  --prose-table-border: color-mix(in oklab, var(--border) 92%, transparent);
+  --prose-hr: color-mix(in oklab, var(--border) 72%, transparent);
+
+  --code-bg: #1e1e1e;
+  --code-header-bg: #252526;
+  --code-border: rgba(255, 255, 255, 0.1);
+  --code-fg: #d4d4d4;
+  --code-muted: #6a9955;
+  --code-keyword: #569cd6;
+  --code-string: #ce9178;
+  --code-number: #b5cea8;
+  --code-function: #dcdcaa;
+  --code-variable: #9cdcfe;
+  --code-property: #9cdcfe;
+  --code-type: #4ec9b0;
+  --code-operator: #d4d4d4;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 32%, transparent);
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.prose {
+  line-height: 1.85;
+  font-size: 1.05rem;
+  color: var(--prose-body);
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose table,
+.prose blockquote,
+.prose .codeblock {
+  margin-block: 1.2rem;
+}
+
+.prose :is(h2, h3) {
+  scroll-margin-top: 96px;
+}
+
+.prose a {
+  color: var(--prose-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--prose-link-underline);
+  transition: color 120ms ease, text-decoration-color 120ms ease;
+}
+
+.prose a:hover {
+  color: color-mix(in oklab, var(--prose-link) 86%, var(--foreground));
+  text-decoration-color: currentColor;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+.prose :not(pre) > code {
+  padding: 0.12em 0.38em;
+  border-radius: 0.5rem;
+  background: var(--inline-code-bg);
+  border: 1px solid var(--inline-code-border);
+  color: var(--inline-code-fg);
+}
+
+.prose :is(h1, h2, h3) {
+  color: var(--prose-heading);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.prose h2 {
+  font-size: 1.6rem;
+  margin-top: 2.2em;
+  margin-bottom: 0.8em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+.prose strong {
+  color: var(--prose-strong);
+}
+
+.prose blockquote {
+  margin: 1.4rem 0;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid color-mix(in oklab, var(--prose-quote-border) 32%, var(--border));
+  border-left: 3px solid var(--prose-quote-border);
+  background: var(--prose-quote-bg);
+  border-radius: 1rem;
+  color: color-mix(in oklab, var(--prose-body) 92%, var(--foreground));
+  box-shadow: 0 12px 32px color-mix(in oklab, var(--accent) 8%, transparent);
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose hr {
+  border: 0;
+  height: 1px;
+  background: var(--prose-hr);
+  margin: 2.2rem 0;
+}
+
+.prose :is(ul, ol) {
+  padding-left: 1.2rem;
+}
+
+.prose :is(ul, ol) li::marker {
+  color: color-mix(in oklab, var(--link) 70%, var(--muted));
+}
+
+.prose li + li {
+  margin-top: 0.38rem;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--prose-table-border);
+  border-radius: 1rem;
+  background: var(--prose-table-bg);
+  box-shadow: 0 14px 40px color-mix(in oklab, var(--accent) 7%, transparent);
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--prose-table-border);
+}
+
+.prose th {
+  text-align: left;
+  color: var(--prose-heading);
+  background: var(--prose-table-head-bg);
+}
+
+.prose td {
+  color: var(--prose-body);
+}
+
+.prose tr:last-child td {
+  border-bottom: 0;
+}
+
+.toc-link {
+  display: block;
+  min-height: 2.65rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.7rem;
+  color: color-mix(in oklab, var(--accent) 62%, var(--foreground));
+  font-size: 0.92rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  transition:
+    color 120ms ease,
+    background 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.toc-link:hover {
+  color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 9%, transparent);
+}
+
+.toc-link[data-active="true"] {
+  color: color-mix(in oklab, var(--accent) 88%, var(--foreground));
+  background: color-mix(in oklab, var(--accent) 14%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent) 22%, transparent);
+}
+
+.toc-link--nested {
+  margin-left: 0.9rem;
+  opacity: 0.9;
+}
+
+.toc-scroll,
+.codeblock pre {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.toc-scroll {
+  scrollbar-color: color-mix(in oklab, var(--accent) 38%, transparent) transparent;
+}
+
+.codeblock pre {
+  scrollbar-color: color-mix(in oklab, var(--accent) 38%, transparent)
+    color-mix(in oklab, var(--accent) 8%, transparent);
+}
+
+.codeblock pre::-webkit-scrollbar,
+.toc-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.toc-scroll::-webkit-scrollbar-track,
+.codeblock pre::-webkit-scrollbar-track {
+  border-radius: 999px;
+}
+
+.toc-scroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.codeblock pre::-webkit-scrollbar-track {
+  background-color: color-mix(in oklab, var(--accent) 8%, transparent);
+}
+
+.toc-scroll::-webkit-scrollbar-thumb,
+.codeblock pre::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-color: color-mix(in oklab, var(--accent) 52%, transparent);
+  box-shadow: inset 0 0 0 999px
+    color-mix(in oklab, var(--accent) 52%, var(--accent-2) 16%);
+}
+
+.toc-scroll::-webkit-scrollbar-thumb:hover,
+.codeblock pre::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in oklab, var(--accent) 72%, transparent);
+  box-shadow: inset 0 0 0 999px
+    color-mix(in oklab, var(--accent) 72%, var(--accent-2) 22%);
+}
+
+.codeblock {
+  border: 1px solid var(--code-border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--code-bg);
+  box-shadow: 0 20px 60px color-mix(in oklab, var(--accent) 10%, transparent);
+}
+
+.codeblock__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--code-border) 85%, transparent);
+  background: var(--code-header-bg);
+}
+
+.codeblock__traffic {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.codeblock__dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+}
+
+.codeblock__dot--red {
+  background: var(--code-dot-red);
+}
+
+.codeblock__dot--yellow {
+  background: var(--code-dot-yellow);
+}
+
+.codeblock__dot--green {
+  background: var(--code-dot-green);
+}
+
+.codeblock__copy {
+  font-size: 0.85rem;
+  color: color-mix(in oklab, var(--code-fg) 88%, transparent);
+  border: 1px solid color-mix(in oklab, var(--code-border) 80%, transparent);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.codeblock__copy:hover {
+  background: color-mix(in oklab, var(--code-fg) 8%, transparent);
+}
+
+.codeblock pre {
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.codeblock pre code,
+.codeblock pre code.hljs {
+  display: block;
+  color: var(--code-fg);
+  background: transparent;
+  line-height: 1.75;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--code-muted);
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: var(--code-keyword);
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal {
+  color: var(--code-string);
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: var(--code-number);
+}
+
+.hljs-title.function_,
+.hljs-function .hljs-title,
+.hljs-function .hljs-title.function_ {
+  color: var(--code-function);
+}
+
+.hljs-title.class_,
+.hljs-class .hljs-title,
+.hljs-type,
+.hljs-built_in {
+  color: var(--code-type);
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-params,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: var(--code-variable);
+}
+
+.hljs-property,
+.hljs-attr {
+  color: var(--code-property);
+}
+
+.hljs-operator,
+.hljs-punctuation {
+  color: var(--code-operator);
+}
